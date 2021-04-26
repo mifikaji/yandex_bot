@@ -22,7 +22,7 @@ document.getElementsByClassName("button_theme_search")[0].click();
             let link=links[i];
             link.removeAttribute("target");
             console.log("Нашёл ссылку "+link);
-            link.click;
+            link.click();
             break;
         }
     }
