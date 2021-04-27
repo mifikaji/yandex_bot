@@ -22,7 +22,7 @@ if(button_search!==undefined){
         yandexInput.value+=keyword[i];
         i++;
         if(i==keyword.length){
-            clearInterval(timerId);
+            clearInterval(timerd);
             button_search.click();
         }
     },1000);
@@ -52,15 +52,14 @@ else{
             break;
         }
     }
-    if(document.querySelector("").innerText=="5"){
+    if(document.querySelector(".pager__item_current_yes").innerText=="5"){
         nextYandexPage=false;
         location.href="https://yandex.ru/";
     }
 
     if(document.querySelector(".pager__item_current_yes").innerText!=="5"){
         setTimeout(()=>{
-            let next=document.getElementByClassName("pager__item_kind_next");
-            next.click();
+            document.getElementsByClassName("pager__item_kind_next").click();
         },getRandom(3000,5500));
     }
 }
