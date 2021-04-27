@@ -9,7 +9,7 @@
 // @icon         
 // @grant        none
 // ==/UserScript==
-let keywords=["sdfghj","как звучит саксофон","как звучит флейта"];
+let keywords=["гобой","как звучит саксофон","как звучит флейта"];
 
 let button_search=document.getElementsByClassName("button_theme_search")[0];
 let links=document.links;
