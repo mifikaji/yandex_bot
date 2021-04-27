@@ -9,7 +9,7 @@
 // @icon         
 // @grant        none
 // ==/UserScript==
-let keywords=["гобой","как звучит саксофон","как звучит флейта"];
+let keywords=["sdfghj","как звучит саксофон","как звучит флейта"];
 
 let button_search=document.getElementsByClassName("button_theme_search")[0];
 let links=document.links;
@@ -22,7 +22,7 @@ if(button_search!==undefined){
         yandexInput.value+=keyword[i];
         i++;
         if(i==keyword.length){
-            clearInterval(timerd);
+            clearInterval(timerId);
             button_search.click();
         }
     },1000);
@@ -52,14 +52,14 @@ else{
             break;
         }
     }
-    if(document.querySelector(".pager__item_current_yes").innerText=="5"){
+    if(document.querySelector(".pager__item_current_yes").textContent=="5"){
         nextYandexPage=false;
         location.href="https://yandex.ru/";
     }
 
-    if(document.querySelector(".pager__item_current_yes").innerText!=="5"){
+    if(document.querySelector(".pager__item_current_yes").textContent!=="5"){
         setTimeout(()=>{
-            document.getElementsByClassName("pager__item_kind_next").click();
+            document.querySelector(".pager__item_kind_next").click();
         },getRandom(3000,5500));
     }
 }
