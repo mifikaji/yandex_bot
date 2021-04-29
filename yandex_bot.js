@@ -93,18 +93,3 @@ function getCookie(name) {
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
-    if(document.querySelector(".pager__item_current_yes").textContent=="5"){
-        nextYandexPage=false;
-        location.href="https://yandex.ru/";
-    }
-
-    if(document.querySelector(".pager__item_current_yes").textContent!=="5"){
-        setTimeout(()=>{
-            document.querySelector(".pager__item_kind_next").click();
-        },getRandom(3000,5500));
-    }
-}
-
-function getRandom(min,max){
-    return Math.floor(Math.random()*(max-min)+min);
-}
