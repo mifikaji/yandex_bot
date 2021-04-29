@@ -6,7 +6,7 @@
 // @author       You
 // @match        https://yandex.ru/*
 // @match        https://xn----7sbab5aqcbiddtdj1e1g.xn--p1ai/*
-// @match https://lapkins.ru/*
+// @match        https://lapkins.ru/*
 // @icon
 // @grant        none
 // ==/UserScript==
@@ -37,6 +37,7 @@ if(button_search!==undefined){
 }
 
 if(button_search!==undefined){
+    document.cookie=`site=${site}`;
     let timerId=setInterval(function(){
         yandexInput.value+=keyword[i];
         i++;
@@ -53,21 +54,21 @@ if(button_search!==undefined){
             location.href="https://yandex.ru/";
         }
         if(links[index].href.indexOf(site)!=-1){
-            links[index].click()
+            links[index].click();
         }
     },getRandom(3500,7000));
 }
 else{
     let nextYandexPage=true;
     for(let i=0; i<links.length;i++){
-        if(links[i].href.indexOf(site)!==-1){
+        if(links[i].href.indexOf(site)!=-1){
             let link=links[i];
             nextYandexPage=false;
             link.removeAttribute("target");
             console.log("Нашёл ссылку "+link);
             setTimeout(()=>{
                 link.click();
-            },getRandom(1000,5000));
+            },getRandom(1000,4500));
             break;
         }
     }
